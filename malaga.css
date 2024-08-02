@@ -484,6 +484,33 @@ body {
   align-items: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .review1 {
+    margin: 12vh 6vw 0 6vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .review1 {
+    margin: 12vh 6vw 0 6vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .review1 {
+    margin: 12vh 6vw 0 6vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
 .review2 {
   margin: 2vh 12vw 2vh 12vw;
   height: 3vh;
