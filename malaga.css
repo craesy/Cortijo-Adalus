@@ -335,6 +335,12 @@ body {
   position: relative;
 }
 
+@media only screen and (max-width: 500px) {
+  .calendarprice {
+    margin: 6vh 12vw 6vh 12vw;
+  }
+}
+
 .description p {
   margin: 0 0 12vh 0;
 }
@@ -663,10 +669,6 @@ div.fc-scroller.fc-day-grid-container {
   height: auto !important;
   overflow: none !important;
 }
-
-
-
-
 
 
 
