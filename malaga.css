@@ -267,8 +267,20 @@ body {
   margin: 12vh 12vw 0 12vw;
 }
 
+@media only screen and (max-width: 700px) {
+  .calendartext {
+    margin: 6vh 12vw 0 6vw;
+  }
+}
+
 .calendartext p {
   font-size: calc(1vw + 1vh);
+}
+
+@media only screen and (max-width: 700px) {
+.calendartext h1 {
+  font-size: calc(1.7vw + 1.7vh);
+}
 }
 
 .calendar {
