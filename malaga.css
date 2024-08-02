@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('/Users/zade/Desktop/Stefansite2/Montserrat-VariableFont_wght.ttf ') format('truetype');
+    src: url('/Montserrat-VariableFont_wght.ttf ') format('truetype');
 }
 
 
@@ -70,10 +70,10 @@ body {
            transition: opacity 0.3s ease-in-out;
        }
        .flag.uk {
-           background-image: url('/Users/zade/Desktop/Stefansite2/9x/asset73.png'); /* Replace with your UK flag image path */
+           background-image: url('/9x/asset73.png'); /* Replace with your UK flag image path */
        }
        .flag.es {
-           background-image: url('/Users/zade/Desktop/Stefansite2/9x/asset74.png'); /* Replace with your Spanish flag image path */
+           background-image: url('/9x/asset74.png'); /* Replace with your Spanish flag image path */
            opacity: 0;
        }
 
