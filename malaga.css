@@ -342,7 +342,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  .calendarprice p{
+  .calendarprice p {
     font-size: calc(1.2vw + 1.2vh);
   }
 }
@@ -739,6 +739,15 @@ div.fc-scroller.fc-day-grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    color: white;
+  }
 }
 
 .contact {
