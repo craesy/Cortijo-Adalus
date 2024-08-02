@@ -315,6 +315,19 @@ body {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 700px) {
+  .calendarselect p {
+    font-size: calc(1.5vw + 1.5vh);
+    background-color: #a90049;
+    padding: 3% 6% 3% 6%;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+
 .description {
   text-align: center;
   font-size: calc(1vw + 1vh);
