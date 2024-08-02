@@ -674,6 +674,12 @@ div.fc-scroller.fc-day-grid-container {
   margin: 0 12vw 8vh 12vw;
 }
 
+@media only screen and (max-width: 500px) {
+  .calendarprice {
+    margin: 0 12vw 4vh 12vw;
+  }
+}
+
 .calendarprice p {
   font-size: calc(1vw + 1vh);
 }
