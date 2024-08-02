@@ -747,6 +747,7 @@ div.fc-scroller.fc-day-grid-container {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
     color: white;
+    margin: 6vh 0 6vh 0;
   }
 }
 
@@ -757,7 +758,7 @@ div.fc-scroller.fc-day-grid-container {
 
 @media only screen and (max-width: 700px) {
   .contact {
-    margin: 6vh 6vw 6vh 6vw;
+    margin: 0 6vw 0 6vw;
     align-self: center;
   }
 }
