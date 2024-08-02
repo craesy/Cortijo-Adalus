@@ -342,6 +342,12 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
+  .calendarprice p{
+    font-size: calc(1.2vw + 1.2vh);
+  }
+}
+
+@media only screen and (max-width: 700px) {
   .description {
     margin: 6vh 6vw 6vh 6vw;
   }
@@ -349,6 +355,12 @@ body {
 
 .description p {
   margin: 0 0 12vh 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .description p {
+    font-size: calc(1.2vw + 1.2vh);
+  }
 }
 
 .info {
