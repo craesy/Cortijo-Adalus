@@ -755,7 +755,20 @@ div.fc-scroller.fc-day-grid-container {
   align-self: center;
 }
 
+@media only screen and (max-width: 700px) {
+  .contact {
+    margin: 0 6vw 0 6vw;
+    align-self: center;
+  }
+}
+
 .Resources {
   align-self: center;
+}
 
+@media only screen and (max-width: 700px) {
+  .Resources {
+    margin: 0 6vw 0 6vw;
+    align-self: center;
+  }
 }
