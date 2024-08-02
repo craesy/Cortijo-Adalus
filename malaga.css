@@ -747,7 +747,7 @@ div.fc-scroller.fc-day-grid-container {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
     color: white;
-    margin: 6vh 0 6vh 0;
+    padding: 6vh 0 6vh 0;
   }
 }
 
