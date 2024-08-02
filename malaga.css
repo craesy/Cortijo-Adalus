@@ -335,9 +335,15 @@ body {
   position: relative;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .calendarprice {
-    margin: 6vh 12vw 6vh 12vw;
+    margin: 6vh 6vw 6vh 6vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .description {
+    margin: 6vh 6vw 6vh 6vw;
   }
 }
 
@@ -707,9 +713,9 @@ div.fc-scroller.fc-day-grid-container {
   margin: 0 12vw 8vh 12vw;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .calendarprice {
-    margin: 0 12vw 4vh 12vw;
+    margin: 0 6vw 4vh 6vw;
   }
 }
 
