@@ -484,7 +484,7 @@ body {
 
 @media only screen and (max-width: 700px) {
   .review1 {
-    margin: 12vh 6vw 0 6vw;
+    margin: 12vh 6vw 0 6vw !important;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -493,7 +493,7 @@ body {
 
 @media only screen and (max-width: 700px) {
   .review2 {
-    margin: 12vh 6vw 0 6vw;
+    margin: 2vh 6vw 2vh 6vw !important;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -502,7 +502,7 @@ body {
 
 @media only screen and (max-width: 700px) {
   .review3 {
-    margin: 12vh 6vw 0 6vw;
+    margin: 2vh 6vw 2vh 6vw !important;
     display: flex;
     flex-direction: row;
     align-items: center;
