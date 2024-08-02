@@ -618,6 +618,12 @@ float: none !important;
   font-size: 1.05em !important;
 }
 
+@media only screen and (max-width: 700px) {
+  .fc button, .fc table, body .fc {
+    font-size: 1em !important;
+  }
+}
+
 .fc-body {
   height: 100%;
 }
