@@ -3,8 +3,6 @@
     src: url('Montserrat-VariableFont_wght.ttf ') format('truetype');
 }
 
-
-
 html {
   position: relative;
 }
@@ -494,7 +492,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  .review1 {
+  .review2 {
     margin: 12vh 6vw 0 6vw;
     display: flex;
     flex-direction: row;
@@ -503,7 +501,7 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  .review1 {
+  .review3 {
     margin: 12vh 6vw 0 6vw;
     display: flex;
     flex-direction: row;
