@@ -1,0 +1,652 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/Users/zade/Desktop/Stefansite2/Montserrat-VariableFont_wght.ttf ') format('truetype');
+}
+
+
+
+html {
+  position: relative;
+}
+
+p {
+  margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
+padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
+}
+
+h4 {
+  margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
+padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
+}
+
+h1 {
+  font-size: 300%;
+  padding: none;
+  font-size: calc(2vw + 2vh);
+}
+
+a {
+  text-decoration: none;
+  color: none !important;
+}
+
+body {
+  position: relative;
+  max-width: 100vw;
+  margin: 0px;
+  font-family: 'Montserrat';
+}
+
+.header {
+  height: 90vh;
+}
+
+.headerImage {
+  background-color: black;
+}
+
+.headerImage img {
+  height: 100%;
+  width: 100%;
+   object-fit: cover;
+}
+
+.language-switcher {
+           position: absolute;
+           top: 10;
+           right: 10;
+           display: inline-block;
+           width: 40px;
+           height: 40px;
+           cursor: pointer;
+       }
+       .flag {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-size: cover;
+           transition: opacity 0.3s ease-in-out;
+       }
+       .flag.uk {
+           background-image: url('/Users/zade/Desktop/Stefansite2/9x/asset73.png'); /* Replace with your UK flag image path */
+       }
+       .flag.es {
+           background-image: url('/Users/zade/Desktop/Stefansite2/9x/asset74.png'); /* Replace with your Spanish flag image path */
+           opacity: 0;
+       }
+
+.intro {
+  min-height: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+.introContainer {
+  margin: 12vh 12vw 12vh 12vw;
+  height: auto;
+  width: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .introContainer {
+    margin: 12vh 8vw 12vh 8vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .introContainer {
+    margin: 12vh 6vw 12vh 6vw;
+  }
+}
+
+.introDiv1 {
+  margin: 0 0 5vh 0;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-self: center;
+  height: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .introDiv1 {
+    grid-template-columns: none;
+    text-align: center;
+    margin: 0 0 5% 0;
+  }
+}
+
+.introCol1 {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  place-self: center;
+}
+
+.introCol11 {
+  margin: 0% 20% 10% 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+  .introCol11 {
+    margin: 0 0 4vh 0;
+  }
+}
+
+.introCol12 {
+  margin: 0% 0 10% 20%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+  .introCol12 {
+    margin: 0 0 0 0;
+  }
+}
+
+.introCol1 img {
+  width: 100%;
+}
+
+.introCol1 p {
+  font-size: calc(1vw + 1vh);
+}
+
+.introCol2 {
+  width: 100%;
+  position: relative;
+  place-self: center;
+}
+
+.introCol2 img {
+  width: 100%;
+  object-fit: contain;
+  position: relative;
+}
+
+.introDiv2 {
+  margin: 8vh 0 0 0;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 700px) {
+  .introDiv2 {
+    grid-template-columns: none;
+    text-align: center;
+    margin: 0 0 5% 0;
+  }
+}
+
+.gallery {
+  width: auto;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+
+.slideshow {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(200% + 30px); /* Adjusted for gaps */
+  gap: 10px; /* Gap between slides */
+  position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+  .slideshow {
+    width: calc(400% + 30px); /* Adjusted for gaps */
+  }
+}
+
+.slide {
+  margin-right: 10px; /* Gap between slides */
+  cursor: pointer;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.nav {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.calendartext {
+  margin: 12vh 12vw 0 12vw;
+}
+
+.calendartext p {
+  font-size: calc(1vw + 1vh);
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 4vh 12vw 0 12vw;
+}
+
+.calendar img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+
+.calendarselect {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0 0;
+  overflow: visible;
+}
+
+.calendarselect p {
+  font-size: calc(1vw + 1vh);
+  background-color: #a90049;
+  padding: 1% 3% 1% 3%;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.description {
+  text-align: center;
+  font-size: calc(1vw + 1vh);
+  margin: 12vh 12vw 12vh 12vw;
+  position: relative;
+}
+
+.description p {
+  margin: 0 0 12vh 0;
+}
+
+.info {
+  height: ;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  margin: 12vh 12vw 12vh 12vw;
+  align-self: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 700px) {
+  .info {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.infoSec1 {
+  margin-right: 10%;
+  align-self: center;
+}
+
+.infoSec2 {
+  align-self: center;
+  height: 100%;
+  position: relative;
+}
+
+.infoSec1 img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.footer {
+  height: 30vh;
+  background-color: black;
+  position: relative;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.popup.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.popup.show .popup-content {
+    transform: scale(1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+    height: auto;
+    width: auto;
+}
+
+.popup-nav.prev {
+    left: 0;
+}
+
+.popup-nav.next {
+    right: 0;
+}
+
+.review1 {
+  margin: 12vh 12vw 0 12vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.review2 {
+  margin: 2vh 12vw 2vh 12vw;
+  height: 3vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.review2 img {
+  height: 100%;
+  width: 100px;
+  object-fit: contain;
+}
+
+.person {
+height: 5%;
+display: flex;
+flex-direction: column;
+}
+
+.person img {
+  height: 100%;
+  width: 100px;
+  object-fit: contain;
+}
+
+.nameperson {
+padding: 0 0 0 1vw;
+display: flex;
+flex-direction: column;
+}
+
+.review3 {
+  margin: 2vh 12vw 2vh 12vw;
+}
+
+@media only screen and (max-width: 700px) {
+  .review3 {
+    font-size: calc(1vw + 1vh);
+  }
+}
+
+#calendar {
+    max-width: 76vw;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px 0 20px 0;
+    box-sizing: border-box;
+    height: auto;
+    overflow: hidden;
+}
+
+/* FullCalendar Header */
+.fc-header-toolbar {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content:space-between;
+}
+
+.fc-button {
+    background: #0056b3;
+    border: none;
+    color: #fff;
+    margin: 0 2px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1.2em !important;
+}
+
+.fc-button:hover {
+    background: #003f7f;
+}
+
+.fc-button-primary:not(:disabled).fc-button-active, .fc-button-primary:not(:disabled):active {
+    background: #004080;
+    border: none;
+}
+
+.fc-button-group > .fc-button {
+    margin-left: 0;
+}
+
+.fc-month-button, .fc-agendaWeek-button, .fc-agendaDay-button, .fc-today-button {
+  display: none;
+}
+
+.fc-day-header {
+    background: white;
+    color: black;
+    padding: 5px;
+}
+
+.fc-day-grid-event {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+.fc-day-grid-event:hover {
+    background: #218838;
+}
+
+.fc-state-default + .fc-next-button {
+  border-color: none;
+  border: none;
+  background-color: white;
+  box-shadow: none;
+  background-image: none;
+}
+
+.fc-state-default  {
+  border-color: none !important;
+  border: none !important;
+  background-color: white !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.fc-ltr .fc-basic-view .fc-day-top .fc-day-number{
+display: flex;
+justify-content: center;
+  align-items: center;
+float: none !important;
+}
+
+
+
+.fc-day .fc-widget-content .fc-thu .fc-today {
+  display: flex !important;
+  align-items: center !important;
+
+}
+
+
+.fc td, .fc th {
+    /* border-style:solid; */
+    border-width: 0;
+    border:none !important;
+    padding: 0;
+    vertical-align: top
+}
+
+.fc-center h4 {
+  display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.fc-right {
+  display: none;
+}
+
+.fc-center {
+  float: center;
+}
+
+.fc-clear {
+  background-color: white !important;
+  width: 106.5px;
+}
+
+.fc-left {
+
+}
+
+.fc-time {
+  display: none;
+}
+
+.fc-day-header {
+  padding: 0 0 5% 0 !important;
+}
+
+.fc button, .fc table, body .fc {
+  font-size: 1.05em !important;
+}
+
+.fc-body {
+  height: 100%;
+}
+
+div.fc-scroller.fc-day-grid-container {
+  height: auto !important;
+  overflow: none !important;
+}
+
+
+
+
+
+
+
+.calendarprice {
+  margin: 0 12vw 8vh 12vw;
+}
+
+.calendarprice p {
+  font-size: calc(1vw + 1vh);
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+}
+
+.contact {
+  margin: 0 0 0 12vw;
+  align-self: center;
+}
+
+.Resources {
+  align-self: center;
+
+}
