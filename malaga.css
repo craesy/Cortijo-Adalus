@@ -492,6 +492,14 @@ flex-direction: column;
   object-fit: contain;
 }
 
+@media only screen and (max-width: 500px) {
+  .person img {
+    height: 100%;
+    width: 70px;
+    object-fit: contain;
+  }
+}
+
 .nameperson {
 padding: 0 0 0 1vw;
 display: flex;
