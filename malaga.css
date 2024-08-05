@@ -28,6 +28,10 @@ a {
   color: none !important;
 }
 
+a:visited {
+  color: white;
+}
+
 body {
   position: relative;
   max-width: 100vw;
