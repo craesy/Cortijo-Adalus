@@ -105,22 +105,21 @@
       Donec nec risus erat. Nullam sem diam, tristique nec neque id, vestibulum elementum enim. Maecenas eu
       Donec nec risus erat. <p>
   </div>
-  <div class="gallery">
-    <div class="slideshow-wrapper">
-      <button class="nav prev" onclick="previousSlide()">&#10094;</button>
-      <div class="slideshow">
-        <div class="slide"><img src="9x/asset20.jpg" alt="Image 1"></div>
-        <div class="slide"><img src="9x/asset21.jpg" alt="Image 2"></div>
-        <div class="slide"><img src="9x/asset26.jpg" alt="Image 3"></div>
-        <div class="slide"><img src="9x/asset23.jpg" alt="Image 4"></div>
-        <div class="slide"><img src="9x/asset25.jpg" alt="Image 5"></div>
-        <div class="slide"><img src="9x/asset24.jpg" alt="Image 6"></div>
-        <div class="slide"><img src="9x/asset22.jpg" alt="Image 7"></div>
-        <div class="slide"><img src="9x/asset27.jpg" alt="Image 8"></div>
-      </div>
-      <button class="nav next" onclick="nextSlide()">&#10095;</button>
+  <div class="slideshow-wrapper">
+    <button class="nav prev" onclick="previousSlide()">&#10094;</button>
+    <div class="slideshow">
+      <div class="slide" style="cursor:auto;"><img src="village/asset1.jpg" alt="Image 1"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset5.jpg" alt="Image 2"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset3.jpg" alt="Image 3"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset7.jpg" alt="Image 4"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset2.jpg" alt="Image 5"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset6.jpg" alt="Image 6"></div>
+      <div class="slide" style="cursor:auto;"><img src="village/asset4.jpg" alt="Image 7"></div>
+
     </div>
+    <button class="nav next" onclick="nextSlide()">&#10095;</button>
   </div>
+</div>
   <div class="reviewfinal" id="reviews">
     <div class="review1">
       <div class="person">
@@ -201,92 +200,100 @@ All in all our stay was more than amazing! Thank you so much!
     </div>
   </body>
   <script>
-    let currentIndex = 0;
-    let popupIndex = 0;
-    const totalSlides = 6;
+  document.addEventListener('DOMContentLoaded', () => {
+    const slideshows = document.querySelectorAll('.slideshow-wrapper');
 
-    function showSlide(index) {
-      const slideshow = document.querySelector('.slideshow');
-      const slidesToShow = 4;
-      const maxIndex = totalSlides - slidesToShow;
+    slideshows.forEach((slideshowWrapper, index) => {
+        let currentIndex = 0;
+        const slides = slideshowWrapper.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-      if (index > maxIndex) {
-        currentIndex = 0;
-      } else if (index < 0) {
-        currentIndex = maxIndex;
-      } else {
-        currentIndex = index;
-      }
+        const prevButton = slideshowWrapper.querySelector('.prev');
+        const nextButton = slideshowWrapper.querySelector('.next');
 
-      slideshow.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
-    }
+        const showSlide = (index) => {
+            const slidesToShow = 4;
+            const maxIndex = totalSlides - slidesToShow;
 
-    function nextSlide() {
-      showSlide(currentIndex + 1);
-    }
+            if (index > maxIndex) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = maxIndex;
+            } else {
+                currentIndex = index;
+            }
 
-    function previousSlide() {
-      showSlide(currentIndex - 1);
-    }
+            const slideshow = slideshowWrapper.querySelector('.slideshow');
+            slideshow.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
+        };
 
-    function showPopupSlide(index) {
-      const slides = document.querySelectorAll('.slide img');
-      if (index >= totalSlides) {
-        popupIndex = 0;
-      } else if (index < 0) {
-        popupIndex = totalSlides - 1;
-      } else {
-        popupIndex = index;
-      }
-      document.getElementById('popupImg').src = slides[popupIndex].src;
-    }
+        const nextSlide = () => showSlide(currentIndex + 1);
+        const previousSlide = () => showSlide(currentIndex - 1);
 
-    function nextPopupSlide() {
-      showPopupSlide(popupIndex + 1);
-    }
+        prevButton.addEventListener('click', previousSlide);
+        nextButton.addEventListener('click', nextSlide);
 
-    function prevPopupSlide() {
-      showPopupSlide(popupIndex - 1);
-    }
+        // Initialize the slideshow
+        showSlide(currentIndex);
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const popup = document.getElementById('popup');
-      const popupImg = document.getElementById('popupImg');
-      const popupClose = document.getElementById('popupClose');
-      const popupNext = document.getElementById('popupNext');
-      const popupPrev = document.getElementById('popupPrev');
-      const slides = document.querySelectorAll('.slide img');
+        // Apply popup functionality only to the first slideshow
+        if (index === 0) {
+            slides.forEach((slide, slideIndex) => {
+                slide.addEventListener('click', (e) => {
+                    const popup = document.getElementById('popup');
+                    const popupImg = document.getElementById('popupImg');
 
-      slides.forEach((slide, index) => {
-        slide.addEventListener('click', (e) => {
-          popup.style.display = 'flex';
-          setTimeout(() => {
-            popup.classList.add('show');
-          }, 10); // Add a small delay to trigger the transition
-          popupIndex = index;
-          popupImg.src = e.target.src;
-        });
-      });
+                    popup.style.display = 'flex';
+                    setTimeout(() => {
+                        popup.classList.add('show');
+                    }, 10); // Add a small delay to trigger the transition
+                    popupIndex = slideIndex;
+                    popupImg.src = e.target.src;
+                });
+            });
 
-      popupClose.addEventListener('click', () => {
-        popup.classList.remove('show');
-        setTimeout(() => {
-          popup.style.display = 'none';
-        }, 500); // Match the transition duration
-      });
+            const popup = document.getElementById('popup');
+            const popupImg = document.getElementById('popupImg');
+            const popupClose = document.getElementById('popupClose');
+            const popupNext = document.getElementById('popupNext');
+            const popupPrev = document.getElementById('popupPrev');
 
-      popupNext.addEventListener('click', nextPopupSlide);
-      popupPrev.addEventListener('click', prevPopupSlide);
+            const showPopupSlide = (index) => {
+                if (index >= totalSlides) {
+                    popupIndex = 0;
+                } else if (index < 0) {
+                    popupIndex = totalSlides - 1;
+                } else {
+                    popupIndex = index;
+                }
+                popupImg.src = slides[popupIndex].querySelector('img').src;
+            };
 
-      popup.addEventListener('click', (e) => {
-        if (e.target !== popupImg && e.target !== popupNext && e.target !== popupPrev) {
-          popup.classList.remove('show');
-          setTimeout(() => {
-            popup.style.display = 'none';
-          }, 500); // Match the transition duration
+            const nextPopupSlide = () => showPopupSlide(popupIndex + 1);
+            const prevPopupSlide = () => showPopupSlide(popupIndex - 1);
+
+            popupClose.addEventListener('click', () => {
+                popup.classList.remove('show');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 500); // Match the transition duration
+            });
+
+            popupNext.addEventListener('click', nextPopupSlide);
+            popupPrev.addEventListener('click', prevPopupSlide);
+
+            popup.addEventListener('click', (e) => {
+                if (e.target !== popupImg && e.target !== popupNext && e.target !== popupPrev) {
+                    popup.classList.remove('show');
+                    setTimeout(() => {
+                        popup.style.display = 'none';
+                    }, 500); // Match the transition duration
+                }
+            });
         }
-      });
     });
+});
+
   </script>
   <script>
   $(document).ready(function() {
@@ -385,5 +392,44 @@ if (userLang.includes('es')) {
      });
 
          </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshows = document.querySelectorAll('.slideshow-wrapper');
+
+    slideshows.forEach((slideshowWrapper, index) => {
+        let currentIndex = 0;
+        const slides = slideshowWrapper.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        const prevButton = slideshowWrapper.querySelector('.prev');
+        const nextButton = slideshowWrapper.querySelector('.next');
+
+        const showSlide = (index) => {
+            const slidesToShow = 4;
+            const maxIndex = totalSlides - slidesToShow;
+
+            if (index > maxIndex) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = maxIndex;
+            } else {
+                currentIndex = index;
+            }
+
+            const slideshow = slideshowWrapper.querySelector('.slideshow');
+            slideshow.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
+        };
+
+        const nextSlide = () => showSlide(currentIndex + 1);
+        const previousSlide = () => showSlide(currentIndex - 1);
+
+        prevButton.addEventListener('click', previousSlide);
+        nextButton.addEventListener('click', nextSlide);
+
+        // Initialize the slideshow
+        showSlide(currentIndex);
+    });
+});
+</script>
 
 </html>

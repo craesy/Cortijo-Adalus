@@ -235,6 +235,15 @@ body {
   align-items: center;
 }
 
+.slideshow-wrapper .slide img {
+  height: 100%; /* Ensures the image fills the slide height */
+}
+
+.slideshow-wrapper .slide {
+  height: 300px; /* Adjust this value as needed */
+  overflow: hidden;
+}
+
 .slideshow {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -252,11 +261,14 @@ body {
 .slide {
   margin-right: 10px; /* Gap between slides */
   cursor: pointer;
+
 }
 
 .slide img {
   width: 100%;
   display: block;
+  height: auto;
+  object-fit: cover; /* Ensure images cover the entire slide area */
 }
 
 .nav {
@@ -510,6 +522,9 @@ body {
   font-size: calc(1vw + 1vh);
   text-align: left;
 }
+
+
+
 
 .review1 {
   margin: 12vh 12vw 0 12vw;
