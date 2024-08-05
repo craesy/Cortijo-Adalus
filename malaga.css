@@ -250,7 +250,7 @@ body {
 }
 
 .slideshow-wrapper .slide img {
-  height: 100%; /* Ensures the image fills the slide height */
+  height: auto; /* Ensures the image fills the slide height */
 }
 
 .slideshow-wrapper .slide {
