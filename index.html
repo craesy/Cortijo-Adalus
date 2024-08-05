@@ -268,61 +268,66 @@ All in all our stay was more than amazing! Thank you so much!
   </script>
   <script>
   $(document).ready(function() {
-    // Replace 'your_ical_url' with the actual iCal URL from Airbnb
-    const icalUrl = 'https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714';
-    const proxyUrl = 'https://api.allorigins.win/get?url=';
+      // Replace 'your_ical_url' with the actual iCal URL from Airbnb
+      const icalUrl = 'https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714';
+      const proxyUrl = 'https://api.allorigins.win/get?url=';
 
-    // Fetch iCal data using a CORS proxy
-    fetch(proxyUrl + encodeURIComponent(icalUrl))
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Raw data fetched successfully:", data);
+      // Fetch iCal data using a CORS proxy
+      fetch(proxyUrl + encodeURIComponent(icalUrl))
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok ' + response.statusText);
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log("Raw data fetched successfully:", data);
 
-            // Check if the contents property exists
-            if (!data.contents) {
-                throw new Error('Contents property is missing in the response data');
-            }
+              // Check if the contents property exists
+              if (!data.contents) {
+                  throw new Error('Contents property is missing in the response data');
+              }
 
-            const parsedData = data.contents;
-            console.log("Parsed data:", parsedData);
+              const parsedData = data.contents;
+              console.log("Parsed data:", parsedData);
 
-            const jcalData = ICAL.parse(parsedData);
-            const comp = new ICAL.Component(jcalData);
-            const vevents = comp.getAllSubcomponents('vevent');
+              // Inspect the first few lines of the parsed data to check for anomalies
+              const firstFewLines = parsedData.split('\n').slice(0, 10).join('\n');
+              console.log("First few lines of iCal data:", firstFewLines);
 
-            const events = vevents.map(event => {
-                const summary = event.getFirstPropertyValue('summary');
-                const startDate = event.getFirstPropertyValue('dtstart').toJSDate();
-                const endDate = event.getFirstPropertyValue('dtend').toJSDate();
-                return {
-                    title: summary,
-                    start: startDate,
-                    end: endDate
-                };
-            });
+              const jcalData = ICAL.parse(parsedData);
+              const comp = new ICAL.Component(jcalData);
+              const vevents = comp.getAllSubcomponents('vevent');
 
-            console.log("Events parsed:", events);
+              const events = vevents.map(event => {
+                  const summary = event.getFirstPropertyValue('summary');
+                  const startDate = event.getFirstPropertyValue('dtstart').toJSDate();
+                  const endDate = event.getFirstPropertyValue('dtend').toJSDate();
+                  return {
+                      title: summary,
+                      start: startDate,
+                      end: endDate
+                  };
+              });
 
-            // Initialize FullCalendar
-            $('#calendar').fullCalendar({
-                events: events,
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay'
-                },
-                editable: false,
-                droppable: false,
-                eventLimit: true, // allow "more" link when too many events
-            });
-        })
-        .catch(error => console.error('Error fetching iCal data:', error));
-});
+              console.log("Events parsed:", events);
+
+              // Initialize FullCalendar
+              $('#calendar').fullCalendar({
+                  events: events,
+                  header: {
+                      left: 'prev,next today',
+                      center: 'title',
+                      right: 'month,agendaWeek,agendaDay'
+                  },
+                  editable: false,
+                  droppable: false,
+                  eventLimit: true, // allow "more" link when too many events
+              });
+          })
+          .catch(error => console.error('Error fetching iCal data:', error));
+  });
+
 </script>
 <script>
 const languageSwitcher = document.getElementById('language-switcher');
