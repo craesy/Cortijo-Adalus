@@ -47,16 +47,16 @@ body {
   background-color: black;
 }
 
-.image2{
+.imageh2{
    display: none;
 }
 
 @media only screen and (max-width: 700px){ //some value
-   .image1{
+   .imageh1{
      display: none;
    }
 
-   .image2{
+   .imageh2{
      display: block;
    }
 }
