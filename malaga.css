@@ -132,9 +132,9 @@ body {
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   .introContainer {
-    margin: 0vh 6vw 0vh 6vw;
+    margin: 6vh 6vw 0vh 6vw;
   }
 }
 
