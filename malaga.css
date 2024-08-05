@@ -47,6 +47,14 @@ body {
   background-color: black;
 }
 
+@media only screen and (max-width: 700px) {
+  .headerImage {
+    background-image: url('9x/asset99.jpg');
+  }
+}
+
+
+
 .headerImage img {
   height: 100%;
   width: 100%;
