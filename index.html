@@ -1,5 +1,6 @@
 <html>
   <head>
+
       <title>Villa Cortijo Adalus</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="malaga.css">
@@ -362,5 +363,22 @@ if (userLang.includes('es')) {
      });
 
          </script>
+  <script>
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const targetUrl = 'https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714';
 
+fetch(proxyUrl + targetUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error fetching iCal data:', error);
+  });
+  </script>
 </html>
