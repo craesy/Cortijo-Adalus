@@ -99,6 +99,28 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12694.901640539842!2d-4.3104241!3d37.3016412!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d86a9768bf921%3A0x21d14ea97088f02f!2sVilla%20Cortijo%20Andalus!5e0!3m2!1sen!2suk!4v1720363267098!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
+  <div class="village">
+    <h1>Our Nearest Villages</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt massa nulla, ut pellentesque arcu aliquam id. Ut purus mi, dapibus sed dapibus vitae, maximus eget odio. In id quam a libero fermentum blandit at eget elit. Mauris eleifend interdum magna feugiat elementum. Nam posuere augue eget vestibulum egestas.
+      Donec nec risus erat. Nullam sem diam, tristique nec neque id, vestibulum elementum enim. Maecenas eu
+      Donec nec risus erat. <p>
+  </div>
+  <div class="gallery">
+    <div class="slideshow-wrapper">
+      <button class="nav prev" onclick="previousSlide()">&#10094;</button>
+      <div class="slideshow">
+        <div class="slide"><img src="9x/asset20.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="9x/asset21.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="9x/asset26.jpg" alt="Image 3"></div>
+        <div class="slide"><img src="9x/asset23.jpg" alt="Image 4"></div>
+        <div class="slide"><img src="9x/asset25.jpg" alt="Image 5"></div>
+        <div class="slide"><img src="9x/asset24.jpg" alt="Image 6"></div>
+        <div class="slide"><img src="9x/asset22.jpg" alt="Image 7"></div>
+        <div class="slide"><img src="9x/asset27.jpg" alt="Image 8"></div>
+      </div>
+      <button class="nav next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
   <div class="reviewfinal" id="reviews">
     <div class="review1">
       <div class="person">
@@ -270,32 +292,19 @@ All in all our stay was more than amazing! Thank you so much!
   $(document).ready(function() {
       // Replace 'your_ical_url' with the actual iCal URL from Airbnb
       const icalUrl = 'https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714';
-      const proxyUrl = 'https://api.allorigins.win/get?url=';
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
       // Fetch iCal data using a CORS proxy
-      fetch(proxyUrl + encodeURIComponent(icalUrl))
+      fetch(proxyUrl + icalUrl)
           .then(response => {
               if (!response.ok) {
                   throw new Error('Network response was not ok ' + response.statusText);
               }
-              return response.json();
+              return response.text();
           })
           .then(data => {
-              console.log("Raw data fetched successfully:", data);
-
-              // Check if the contents property exists
-              if (!data.contents) {
-                  throw new Error('Contents property is missing in the response data');
-              }
-
-              const parsedData = data.contents;
-              console.log("Parsed data:", parsedData);
-
-              // Inspect the first few lines of the parsed data to check for anomalies
-              const firstFewLines = parsedData.split('\n').slice(0, 10).join('\n');
-              console.log("First few lines of iCal data:", firstFewLines);
-
-              const jcalData = ICAL.parse(parsedData);
+              console.log("iCal data fetched successfully");
+              const jcalData = ICAL.parse(data);
               const comp = new ICAL.Component(jcalData);
               const vevents = comp.getAllSubcomponents('vevent');
 
@@ -327,7 +336,6 @@ All in all our stay was more than amazing! Thank you so much!
           })
           .catch(error => console.error('Error fetching iCal data:', error));
   });
-
 </script>
 <script>
 const languageSwitcher = document.getElementById('language-switcher');
