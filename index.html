@@ -1,5 +1,8 @@
 <html>
   <head>
+
+          Access-Control-Allow-Origin: *
+
       <title>Villa Cortijo Adalus</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" type="text/css" href="malaga.css">
@@ -22,15 +25,16 @@
     <div class="intro">
       <div class="introContainer">
         <div class="introDiv1">
+          <div class="introCol2">
+            <img alt="cordoba" src="9x/asset15.jpg">
+          </div>
           <div class="introCol1">
             <div class="introCol11">
               <h1 data-en="Relax with family and friends in the middle of rural Andalusia." data-es="Relájate con familiares y amigos en plena Andalucía rural.">Relax with family and friends in the middle of rural Andalusia.</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In efficitur sem id diam lobortis congue. Sed finibus felis eget nulla lacinia lacinia. Duis tincidunt fringilla ipsum eget mattis. Quisque interdum auctor nisl, a faucibus metus consequat a. Quisque eget blandit augue. Nullam commodo urna in vehicula feugiat.</p>
             </div>
           </div>
-          <div class="introCol2">
-            <img alt="cordoba" src="9x/asset15.jpg">
-          </div>
+
         </div>
         <div class="introDiv2">
           <div class="introCol2">
@@ -158,8 +162,8 @@ All in all our stay was more than amazing! Thank you so much!
         <h4>Contact</h4>
         <br>
         <p>stefbala@yahoo.com</p>
-        <p>+44 7365 278 781</p>
-        <p>Solerche 24, 14970 Iznájar, Córdoba, Spain</p>
+        <br>
+        <br>
       </div>
       <div class="resources">
         <h4>Resources</h4>
@@ -314,40 +318,52 @@ All in all our stay was more than amazing! Thank you so much!
   });
 </script>
 <script>
-       // JavaScript to handle language switching
-       const languageSwitcher = document.getElementById('language-switcher');
-       const flags = {
-           uk: document.querySelector('.flag.uk'),
-           es: document.querySelector('.flag.es')
-       };
-       const contentElements = document.querySelectorAll('[data-en]');
+const languageSwitcher = document.getElementById('language-switcher');
+const flags = document.querySelectorAll('.flag');
+const contentElements = document.querySelectorAll('[data-en]');
 
-       languageSwitcher.addEventListener('click', () => {
-           const isEnglish = flags.uk.style.opacity !== '0';
-           if (isEnglish) {
-               flags.uk.style.opacity = '0';
-               flags.es.style.opacity = '1';
-               switchLanguage('es');
-           } else {
-               flags.uk.style.opacity = '1';
-               flags.es.style.opacity = '0';
-               switchLanguage('en');
-           }
-       });
+languageSwitcher.addEventListener('click', () => {
+    const isEnglishSelected = languageSwitcher.classList.contains('selected-en');
+    if (isEnglishSelected) {
+        switchLanguage('es');
+        languageSwitcher.classList.remove('selected-en');
+        languageSwitcher.classList.add('selected-es');
+    } else {
+        switchLanguage('en');
+        languageSwitcher.classList.remove('selected-es');
+        languageSwitcher.classList.add('selected-en');
+    }
+});
 
-       function switchLanguage(language) {
-           contentElements.forEach(element => {
-               element.textContent = element.getAttribute(`data-${language}`);
-           });
-       }
+function switchLanguage(language) {
+    contentElements.forEach(element => {
+        element.textContent = element.getAttribute(`data-${language}`);
+    });
+}
 
-       // Set the initial language based on user's browser setting or default to English
-       const userLang = navigator.language || navigator.userLanguage;
-       if (userLang.includes('es')) {
-           flags.uk.style.opacity = '0';
-           flags.es.style.opacity = '1';
-           switchLanguage('es');
-       }
+// Set the initial language based on user's browser setting or default to English
+const userLang = navigator.language || navigator.userLanguage;
+if (userLang.includes('es')) {
+    switchLanguage('es');
+    languageSwitcher.classList.add('selected-es');
+} else {
+    switchLanguage('en');
+    languageSwitcher.classList.add('selected-en');
+}
    </script>
+   <script>
+   const proxyUrl = 'https://api.allorigins.win/get?url=';
+   const targetUrl = encodeURIComponent('URL_OF_YOUR_ICAL_FILE');
+
+   fetch(proxyUrl + targetUrl)
+     .then(response => response.json())
+     .then(data => {
+       console.log(data.contents);
+     })
+     .catch(error => {
+       console.error('Error fetching iCal data:', error);
+     });
+
+         </script>
 
 </html>
