@@ -364,21 +364,21 @@ if (userLang.includes('es')) {
 
          </script>
   <script>
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const targetUrl = 'https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714';
+  const proxyUrl = 'https://my-proxy-server.herokuapp.com/proxy?url=';
+  const targetUrl = encodeURIComponent('https://www.airbnb.co.uk/calendar/ical/54172009.ics?s=6b901f8f797ec98ddb6026e6f74fb714');
 
-fetch(proxyUrl + targetUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.text();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error fetching iCal data:', error);
-  });
+  fetch(proxyUrl + targetUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Error fetching iCal data:', error);
+    });
   </script>
 </html>
