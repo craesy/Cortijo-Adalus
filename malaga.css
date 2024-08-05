@@ -263,9 +263,8 @@ body {
 .slideshow {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: calc(200% + 30px); /* Adjusted for gaps */
   gap: 10px; /* Gap between slides */
-  position: relative;
+  width: calc(100% + 30px); /* Adjust for gaps */
 }
 
 @media only screen and (max-width: 700px) {
@@ -275,7 +274,8 @@ body {
 }
 
 .slide {
-  margin-right: 10px; /* Gap between slides */
+  flex: 0 0 24%; /* Each slide takes up 25% of the container width */
+  margin-right: 0.5%; /* Gap between slides */
   cursor: pointer;
 
 }

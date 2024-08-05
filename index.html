@@ -52,14 +52,22 @@
       <div class="slideshow-wrapper">
         <button class="nav prev" onclick="previousSlide()">&#10094;</button>
         <div class="slideshow">
-          <div class="slide"><img src="9x/asset20.jpg" alt="Image 1"></div>
-          <div class="slide"><img src="9x/asset21.jpg" alt="Image 2"></div>
-          <div class="slide"><img src="9x/asset26.jpg" alt="Image 3"></div>
-          <div class="slide"><img src="9x/asset23.jpg" alt="Image 4"></div>
-          <div class="slide"><img src="9x/asset25.jpg" alt="Image 5"></div>
-          <div class="slide"><img src="9x/asset24.jpg" alt="Image 6"></div>
-          <div class="slide"><img src="9x/asset22.jpg" alt="Image 7"></div>
-          <div class="slide"><img src="9x/asset27.jpg" alt="Image 8"></div>
+          <div class="slide"><img src="10x/asset1(1).jpg" alt="Image 1"></div>
+          <div class="slide"><img src="10x/asset2(1).jpg" alt="Image 2"></div>
+          <div class="slide"><img src="10x/asset3(1).jpg" alt="Image 3"></div>
+          <div class="slide"><img src="10x/asset4(1).jpg" alt="Image 4"></div>
+          <div class="slide"><img src="10x/asset5(1).jpg" alt="Image 5"></div>
+          <div class="slide"><img src="10x/asset6.jpg" alt="Image 6"></div>
+          <div class="slide"><img src="10x/asset7(1).jpg" alt="Image 7"></div>
+          <div class="slide"><img src="10x/asset8.jpg" alt="Image 8"></div>
+          <div class="slide"><img src="10x/asset9.jpg" alt="Image 9"></div>
+          <div class="slide"><img src="10x/asset10.jpg" alt="Image 10"></div>
+          <div class="slide"><img src="10x/asset11.jpg" alt="Image 11"></div>
+          <div class="slide"><img src="10x/asset12.jpg" alt="Image 12"></div>
+          <div class="slide"><img src="10x/asset13.jpg" alt="Image 13"></div>
+          <div class="slide"><img src="10x/asset14(1).jpg" alt="Image 14"></div>
+          <div class="slide"><img src="10x/asset15(1).jpg" alt="Image 15"></div>
+
         </div>
         <button class="nav next" onclick="nextSlide()">&#10095;</button>
       </div>
@@ -397,7 +405,7 @@ if (userLang.includes('es')) {
 document.addEventListener('DOMContentLoaded', () => {
     const slideshows = document.querySelectorAll('.slideshow-wrapper');
 
-    slideshows.forEach((slideshowWrapper, index) => {
+    slideshows.forEach((slideshowWrapper) => {
         let currentIndex = 0;
         const slides = slideshowWrapper.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -418,11 +426,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const slideshow = slideshowWrapper.querySelector('.slideshow');
-            slideshow.style.transform = `translateX(-${currentIndex * (100 / slidesToShow)}%)`;
+            slideshow.style.transform = `translateX(-${currentIndex * 100 / slidesToShow}%)`;
         };
 
-        const nextSlide = () => showSlide(currentIndex + 1);
-        const previousSlide = () => showSlide(currentIndex - 1);
+        const nextSlide = () => showSlide(currentIndex + 2);
+        const previousSlide = () => showSlide(currentIndex - 2);
 
         prevButton.addEventListener('click', previousSlide);
         nextButton.addEventListener('click', nextSlide);
