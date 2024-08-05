@@ -254,7 +254,7 @@ body {
 }
 
 .slideshow-wrapper .slide {
-  height: 300px; /* Adjust this value as needed */
+  height: auto; /* Adjust this value as needed */
   overflow: hidden;
 }
 
