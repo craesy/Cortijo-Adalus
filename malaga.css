@@ -534,6 +534,12 @@ body {
   margin:12vh 12vw 12vh 12vw;
 }
 
+@media only screen and (max-width: 700px) {
+  .village {
+    margin:12vh 6vw 12vh 6vw;
+  }
+}
+
 .village p {
   font-size: calc(1vw + 1vh);
   text-align: left;
