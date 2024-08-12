@@ -245,10 +245,9 @@ body {
 }
 
 .slideshow-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  align-items: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
 .slideshow-wrapper .slide img {
@@ -260,45 +259,49 @@ body {
   overflow: hidden;
 }
 
+
 .slideshow {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 10px; /* Gap between slides */
-  width: calc(100% + 30px); /* Adjust for gaps */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    padding-left: 10px; /* Adjust padding to account for gap */
+    padding-right: 10px; /* Adjust padding to account for gap */
 }
 
 @media only screen and (max-width: 700px) {
   .slideshow {
-    width: calc(198.4% + 0.1%); /* Adjusted for gaps */
+    width: calc(200% + 30px); /* Adjusted for gaps */
   }
 }
 
 .slide {
-  flex: 0 0 24%; /* Each slide takes up 25% of the container width */
-  margin-right: 0.5%; /* Gap between slides */
-  cursor: pointer;
-
+    flex: 0 0 calc(25% - 20px); /* Each slide takes up 25% of the container width, minus padding */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width calculation */
+    cursor: pointer;
+    padding-left: 10px; /* Adjust padding to create gap */
+    padding-right: 10px; /* Adjust padding to create gap */
 }
 
 .slide img {
   width: 100%;
-  display: block;
   height: auto;
-  object-fit: cover; /* Ensure images cover the entire slide area */
+  display: block;
+
 }
 
+
 .nav {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
 }
+
 
 .prev {
   left: 10px;
