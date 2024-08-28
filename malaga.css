@@ -430,6 +430,9 @@ body {
 .infoSec1 {
   margin-right: 10%;
   align-self: center;
+  display: flex;
+  flex-direction: column;
+    justify-content: flex-start;
 }
 
 .infoSec2 {
@@ -982,4 +985,16 @@ div.fc-scroller.fc-day-grid-container {
     .popup-content1 {
         width: 90%;
     }
+}
+
+.infoseclist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.infoseclist ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: calc(1vw + 1vh);
 }
