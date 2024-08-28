@@ -31,7 +31,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
   text-decoration: none !important;
 }
 
@@ -364,6 +364,7 @@ button {
   justify-content: center;
   margin: 0 0 0 0;
   overflow: visible;
+  text-align: center;
 }
 
 .calendarselect a {
