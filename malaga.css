@@ -114,6 +114,8 @@ body {
   position: relative;
 }
 
+
+
 .introContainer {
   margin: 12vh 12vw 12vh 12vw;
   height: auto;
@@ -424,6 +426,7 @@ body {
   .info {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
+    margin: 6vh 6vw 6vh 6vw;
   }
 }
 
