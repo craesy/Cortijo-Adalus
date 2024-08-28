@@ -3,6 +3,10 @@
     src: url('Montserrat-VariableFont_wght.ttf ') format('truetype');
 }
 
+* {
+  touch-action: manipulation;
+}
+
 html {
   position: relative;
 }
@@ -465,6 +469,10 @@ button {
   height: 30vh;
   background-color: black;
   position: relative;
+}
+
+.footer p {
+  text-decoration: none
 }
 
 .popup {
