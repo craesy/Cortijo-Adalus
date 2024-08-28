@@ -39,6 +39,10 @@ body {
   font-family: 'Montserrat';
 }
 
+button {
+  touch-action: manipulation;
+}
+
 .header {
   height: 90vh;
 }
