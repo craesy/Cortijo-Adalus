@@ -889,7 +889,7 @@ div.fc-scroller.fc-day-grid-container {
   }
 }
 
-.Resources {
+.resources {
   align-self: center;
 }
 
@@ -1021,6 +1021,10 @@ div.fc-scroller.fc-day-grid-container {
   font-size: calc(1vw + 1vh);
 }
 
+.resources {
+
+}
+
 .fc-title {
   visibility: hidden; /* hides event title */
 }
@@ -1031,4 +1035,8 @@ div.fc-scroller.fc-day-grid-container {
 .fc-title:before {
     content: "Unavailable";
     visibility:visible;
+}
+
+.fc-title *:after {
+  content: "Indisponible" attr(data-es);
 }
