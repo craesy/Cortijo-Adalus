@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="gallery">
+<!--    <div class="gallery">
       <div class="slideshow-wrapper">
         <button class="nav prev" onclick="previousSlide()">&#10094;</button>
         <div class="slideshow">
@@ -70,7 +70,42 @@
         </div>
         <button class="nav next" onclick="nextSlide()">&#10095;</button>
       </div>
-    </div>
+    </div> -->
+
+    <div class="slideshow-container1">
+            <button class="prev1" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="slideshow1">
+                <div class="slides1">
+                    <!-- Images here -->
+                    <img src="10x/asset1(1).jpg" alt="Image 1" onclick="openPopup(this)">
+                    <img src="10x/asset2(1).jpg" alt="Image 2" onclick="openPopup(this)">
+                    <img src="10x/asset3(1).jpg" alt="Image 3" onclick="openPopup(this)">
+                    <img src="10x/asset4(1).jpg" alt="Image 4" onclick="openPopup(this)">
+                    <img src="10x/asset5(1).jpg" alt="Image 5" onclick="openPopup(this)">
+                    <img src="10x/asset6.jpg" alt="Image 6" onclick="openPopup(this)">
+                    <img src="9x/asset20.jpg" alt="Image 7" onclick="openPopup(this)">
+                    <img src="10x/asset9.jpg" alt="Image 8" onclick="openPopup(this)">
+                    <img src="9x/asset25.jpg" alt="Image 9" onclick="openPopup(this)">
+                    <img src="10x/asset11.jpg" alt="Image 10" onclick="openPopup(this)">
+
+                    <img src="10x/asset1(1).jpg" alt="Image 1" onclick="openPopup(this)">
+                    <img src="10x/asset2(1).jpg" alt="Image 2" onclick="openPopup(this)">
+                    <img src="10x/asset3(1).jpg" alt="Image 3" onclick="openPopup(this)">
+                    <img src="10x/asset4(1).jpg" alt="Image 4" onclick="openPopup(this)">
+                    <img src="10x/asset5(1).jpg" alt="Image 5" onclick="openPopup(this)">
+                    <!-- Add more images as needed -->
+                </div>
+            </div>
+            <button class="next1" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <div id="popup1" class="popup1">
+            <span class="close1" onclick="closePopup()">&times;</span>
+            <img class="popup-content1" id="popupImage">
+        </div>
+
+
+
     <div class="calendartext">
       <h1>Preview check-in date</h1>
       <!--!<p>Contact Stefan for exact pricing</p>--->
@@ -207,6 +242,56 @@ All in all our stay was more than amazing! Thank you so much!
         <button class="popup-nav next" id="popupNext">&#10095;</button>
     </div>
   </body>
+
+  <script>
+  let currentSlide = 0;
+
+function changeSlide(direction) {
+    const slides = document.querySelector('.slides1');
+    const totalSlides = slides.children.length;
+    const slideWidth = slides.children[0].clientWidth;
+
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 5; // For desktop, change 5 to 2 for mobile
+    } else if (currentSlide >= totalSlides - 4) {
+        currentSlide = 0;
+    }
+
+    slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+function openPopup(img) {
+    const popup = document.getElementById('popup1');
+    const popupImage = document.getElementById('popupImage');
+    popup.style.display = "block";
+    popupImage.src = img.src;
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup1');
+    popup.style.display = "none";
+}
+
+// Swipe functionality for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.querySelector('.slideshow1').addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.querySelector('.slideshow1').addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    if (touchEndX < touchStartX) changeSlide(1);
+    if (touchEndX > touchStartX) changeSlide(-1);
+}
+  </script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
       const slideshows = document.querySelectorAll('.slideshow-wrapper');
