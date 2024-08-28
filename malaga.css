@@ -1020,3 +1020,15 @@ div.fc-scroller.fc-day-grid-container {
   justify-content: space-between;
   font-size: calc(1vw + 1vh);
 }
+
+.fc-title {
+  visibility: hidden; /* hides event title */
+}
+
+
+
+
+.fc-title:before {
+    content: "Unavailable";
+    visibility:visible;
+}
