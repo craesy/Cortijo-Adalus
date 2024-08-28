@@ -878,7 +878,7 @@ div.fc-scroller.fc-day-grid-container {
 .slideshow-container1 {
     position: relative;
     width: 100%;
-    height: 25vh;
+    height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -895,7 +895,8 @@ div.fc-scroller.fc-day-grid-container {
 }
 
 .slides1 img {
-    min-width: 20%;
+    min-width: calc(25% - 5px); /* Adjusted width for 4 images and added margin */
+    margin-right: 5px; /* Add a small gap between each slide */
     cursor: pointer;
 }
 
@@ -912,6 +913,9 @@ div.fc-scroller.fc-day-grid-container {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.8);
+
 }
 
 .prev1 {
@@ -932,13 +936,14 @@ div.fc-scroller.fc-day-grid-container {
     display: none;
     position: fixed;
     z-index: 999;
-    padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
 }
 
 .popup-content1 {
@@ -966,6 +971,15 @@ div.fc-scroller.fc-day-grid-container {
 
 @media screen and (max-width: 768px) {
     .slides1 img {
-        min-width: 50%;
+        min-width: calc(50% - 5px); /* Adjusted width for mobile */
+    }
+
+    .prev1, .next1 {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .popup-content1 {
+        width: 90%;
     }
 }
