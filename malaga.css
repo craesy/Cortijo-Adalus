@@ -427,6 +427,7 @@ body {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
     margin: 6vh 6vw 6vh 6vw;
+    display: none;
   }
 }
 
