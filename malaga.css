@@ -1029,9 +1029,6 @@ div.fc-scroller.fc-day-grid-container {
   visibility: hidden; /* hides event title */
 }
 
-
-
-
 .fc-title:before {
     content: "Unavailable";
     visibility:visible;
@@ -1039,4 +1036,23 @@ div.fc-scroller.fc-day-grid-container {
 
 .fc-title *:after {
   content: "Indisponible" attr(data-es);
+}
+
+.fc-event-container {
+  height: 20vh;
+  background: gray !important;
+  z-index: 10000;
+  min-height: 200;
+  position: relative;
+  opacity: 70%
+
+}
+
+.fc-event {
+  border:0px solid grey !important;
+}
+
+.fc-content {
+  background:grey;
+  border:0px solid grey !important;
 }
