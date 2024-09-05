@@ -52,7 +52,7 @@ button {
 }
 
 .header {
-  height: 90vh;
+  height: auto;
 }
 
 .headerImage {
