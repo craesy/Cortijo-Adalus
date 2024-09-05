@@ -63,6 +63,11 @@ button {
    display: none;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 @media only screen and (max-width: 700px){
    .imageh1{
      display: none;
